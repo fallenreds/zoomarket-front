@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+
+body{
+    background-color: #eeeeee;
+}
+
+
+.discount_label{
+    text-align: center;
+    background-color: #ff0000;
+    padding: 3px 8px;
+    border-radius: 50px;
+    color: white;
+    margin: 10px;
+    position: absolute;
+}
+header{
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    line-height: 70px;
+    /*background-color: #f3C301;*/
+    background-color: #f3c301;
+    height: 70px;
+
+}
+
+.search_bar{
+    min-width: 30%;
+    width: 30%;
+    justify-content: space-between;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    line-height: 40px;
+    background-color: #fff;
+    height: 40px;
+    border-radius: 10px;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.shopping_text{
+
+}
+
+.nav_element{
+    font-family: Roboto;
+    font-weight: bold;
+    gap:10px;
+    margin: 0 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.nav_element img{
+    width: 30px;
+    height: 30px;
+}
+
+.search_bar:hover{
+    border: 2px solid #058240;
+}
+
+.search_bar *{
+    margin: 10px;
+}
+
+.search_bar input{
+    width: 100%;
+    border: none;
+
+}
+
+
+input:focus {
+    outline: none;
+}
+
+.search_bar img{
+
+    height: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+
+
+
+.content_container{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.filter{
+    height: 40px;
+    margin: 20px 0;
+    background-color: red;
+}
+
+.goods_container{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+}
+
+.good{
+    font-family: Roboto;
+    font-weight: bold;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 550px;
+    /*border: 3px solid #a7d558;*/
+
+
+}
+.good img{
+    align-self: center;
+    height: 300px;
+
+    padding: 0 10px;
+    margin: 20px 10px 10px 10px;
+}
+.good_label{
+    color: #a7d558;
+    margin: 10px;
+    height:18%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.price{
+    margin: 10px;
+    font-size: 16px;
+}
+.buy{
+    transition-duration: 0.3s;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f3c301;
+    height: 40px;
+    line-height: 20px;
+
+
+}
+
+.buy:hover{
+    background-color: transparent;
+    background-image: url("imgs/shoppingcart.png");
+    background-size: contain ;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-box-shadow:inset 0px 0px 0px 2px #f3c301;
+    -moz-box-shadow:inset 0px 0px 0px 2px #f3c301;
+    box-shadow:inset 0px 0px 0px 2px #f3c301;
+
+    /*border: #f3c301 3px solid ;*/
+}
+
+.buy:hover span{
+    display: none;
+}
+
+.good:hover{
+    box-shadow: 0px 0px 3px 5px rgba(34, 110, 34, 0.15);
+}
+/*.good:hover .buy{*/
+/*    align-: center;*/
+/*    display: flex;*/
+/*}*/
+
+
+
+
+
+@media(max-width: 1366px){
+    .goods_container{
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+    }
+}
+@media(max-width: 1024px){
+    .goods_container{
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+    }
+}
+
+@media(max-width: 800px){
+    .goods_container{
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+
+    }
+}
+
+@media(max-width: 600px){
+    .goods_container{
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+
+    }
+}
+@media(max-width: 500px){
+    .goods_container{
+        grid-template-columns: repeat(1, minmax(150px, 1fr));
+
+    }
+}
+
+
